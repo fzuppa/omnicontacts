@@ -45,6 +45,10 @@ module OmniContacts
               gd_full_name = gd_name.elements['gd:fullName']
               contact[:name] = gd_full_name.text if gd_full_name
             end
+            gd_first_name = entry.elements['gd:first_name']
+            if gd_first_name
+              contact[:first_name] = gd_first_name
+            end
             contacts << contact
           end
         end
